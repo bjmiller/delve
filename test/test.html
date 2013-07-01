@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    	<meta charset="UTF-8" />
+    	<title>Delver Test Harness</title>
+        <link rel="stylesheet" href="vendor/mocha.css" media="all" />
+        <script src="../delve.js"></script>
+        <script src="vendor/chai.js"></script>
+        <script src="vendor/mocha.js"></script>
+        <script>
+        var mocha = window.mocha;
+        mocha.setup({
+            ui: 'bdd'
+        });
+        var expect = chai.expect;
+        </script>
+        <script src="spec.js"></script>
+        
+    </head>
+    <body>
+    	<div id="mocha"></div>
+        <script>mocha.run();</script>
+    </body>
+</html>
