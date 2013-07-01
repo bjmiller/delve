@@ -4,10 +4,10 @@ Delve.js is a small utility for making navigation and dereferencing of large and
 
 Instead of something like this:
 
-    `window.namespace && window.namespace.feature && window.namespace.feature[0] && window.namespace.feature[0].description`
+    window.namespace && window.namespace.feature && window.namespace.feature[0] && window.namespace.feature[0].description
 You can use this:
 
-    `delve( window.namespace )( 'feature' )( 0 )( 'description' )()`
+    delve( window.namespace )( 'feature' )( 0 )( 'description' )()
 ## How to use delve.js
 Use your favorite method for including delve.js, be it require/AMD or just using a script tag in the browser.  Call the public/exported function "delve", with the object that you wish to search within as the parameter.
 
