@@ -2,7 +2,7 @@
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     define(factory);
-  } else if (typeof exports === 'object') {
+  } else if (typeof module === 'object' && typeof module.exports === 'object') {
     module.exports = factory();
   } else {
     root.delve = factory();
@@ -37,13 +37,13 @@
   
   generateInspector = function(/* source */) {
     var argv, source;
-    argv = Array.prototype.slice.call(arguments);
+    argv = [].slice.call(arguments);
     if (isUndefined(argv[0])) {
       return nothing();
     } else {
       return function() {
         source = argv[0];
-        return inspect.apply(this, [source].concat(Array.prototype.slice.call(arguments)));
+        return inspect.apply(this, [source].concat([].slice.call(arguments)));
       };
     }
   };
@@ -110,7 +110,7 @@
   
   inspect = function(/* source, ask */) {
     var argv, ask, source, newSource, i, interim;
-    argv = Array.prototype.slice.call(arguments);
+    argv = [].slice.call(arguments);
     source = argv[0];
     ask = typeof (argv[1]) === 'function' ? argv[1](source) : argv[1];
     // If ask is...
