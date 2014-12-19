@@ -1,0 +1,19 @@
+{
+  "name": "delve",
+  "version": "1.0.0",
+  "description": "A utility to nicely search for values in large objects with unpredictable structures",
+  "main": "delve.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bjmiller/delve.git"
+  },
+  "author": "Brian Miller <bjmiller@bway.net>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bjmiller/delve/issues"
+  },
+  "homepage": "https://github.com/bjmiller/delve"
+}
