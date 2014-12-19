@@ -2,10 +2,12 @@
 (function (root, factory) {
   if (typeof define === 'function' && define.amd) {
     define(factory);
+  } else if (typeof exports === 'object') {
+    module.exports = factory();
   } else {
-    root.delve = factory(root.delver);
+    root.delve = factory();
   }
-}(this, function () {
+})(this, function () {
   var isUndefined, isObj, isArray, isNoArg, delve, generateInspector, nothing, inspect, dereference;
   
   isUndefined = function(thing) {
@@ -141,4 +143,4 @@
   };
   
   return delve;
-}));
+});
