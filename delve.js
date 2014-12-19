@@ -17,6 +17,10 @@
   isArray = function(thing) {
     return (Object.prototype.toString.call(thing) === '[object Array]');
   };
+
+  isArguments = function(thing) {
+    return (Object.prototype.toString.call(thing) === '[object Arguments]') || thing.hasOwnProperty('callee');
+  };
   
   // Kind of borrowing jQuery's "isPlainObject".
   isObj = function(thing) {
@@ -28,7 +32,7 @@
   };
   
   isNoArg = function(thing) {
-    return isUndefined(thing[0]) && thing.length === 0;
+    return (isArguments(thing) || isArray(thing)) && isUndefined(thing[0]) && thing.length === 0;
   };
   
   delve = function(source) {
