@@ -10,6 +10,9 @@ describe('delve.js', function() {
     it('should return its source, when passed no arguments.', function() {
       expect(delve({foo: 1, bar: '2'})()).to.eql({foo: 1, bar: '2'});
     });
+    it('should return undefined, when passed an explicitly undefined value', function() {
+      expect(delve({foo: 1, bar: '2'})(void 0)).to.be.an('undefined');
+    });
     it('should return a function in any other case.', function() {
       expect(delve({foo: 1, bar: '2'})('foo')).to.be.a('function');
       expect(delve({foo: 1, bar: '2'})({bar: 'baz'})).to.be.a('function');

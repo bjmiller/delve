@@ -128,6 +128,8 @@
       return generateInspector(void 0);
     } else if (isNoArg(argv.slice(1))) {
       return source;
+    } else if (isUndefined(ask)) {
+      return void 0;
     } else if (typeof ask === 'string') {
       return generateInspector(dereference.string(source, ask));
     } else if (typeof ask === 'number') {
